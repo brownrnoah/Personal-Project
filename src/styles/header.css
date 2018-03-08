@@ -1,0 +1,28 @@
+.main_header{
+    height: 65px;
+    width: 100%;
+    background-color:  #034e2f;
+    opacity: 0.75;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+.main_header button{
+    background-color: #b1e8af;
+    margin-top: 20px;
+    opacity: 1.0;
+    border: none;
+    border-radius: 5px;
+    font-family: "shojumaru";
+    color: #034e2f;
+    box-shadow: 2px 2px black;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.main_header button:hover{
+    background-color: #15b371;
+    cursor: pointer;
+}

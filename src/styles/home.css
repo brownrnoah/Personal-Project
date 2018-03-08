@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Shojumaru');
+.background{
+    display: flex;
+    background-image: url("../images/lanterns.jpg");
+    background-size: cover;
+    height: 80vh;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    justify-content: center;
+    align-items: center;
+}
+
+.background button{
+    font-size: 20px;
+    padding: 20px;
+    background-color: #b1e8af;
+    border: none;
+    border-radius: 15px;
+    font-family: "shojumaru";
+    color: #034e2f;
+    text-shadow: 2px 2px #034e2f;
+    box-shadow: 5px 5px #034e2f;
+}
+
+.background button:hover{
+    background-color: #15b371;
+    cursor: pointer;
+}
+
+.home_text{
+    font-size: 30px;
+    color: #b1e8af;
+    box-shadow: 5px;
+    font-family: "shojumaru";
+    text-shadow: 7px 7px #034e2f;
+}

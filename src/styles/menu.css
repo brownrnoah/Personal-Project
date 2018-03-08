@@ -1,0 +1,19 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(5, 15vw);
+    grid-gap: calc(15vw/4);
+    margin: 5vw;
+}
+
+.wrapper div{
+    position: relative;
+    background-color: #b1e8af;;
+    height: 15vw;
+}
+
+.wrapper button{
+    width: 95px;
+    position: absolute;
+    left: 35%;
+    bottom: 15px;
+}
