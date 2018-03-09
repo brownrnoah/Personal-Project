@@ -19,6 +19,7 @@ const app = express();
 
 massive(CONNECTION_STRING).then(db => {
     app.set("db",db);
+    app.listen(SERVER_PORT, ()=>console.log(`Listening on port: ${SERVER_PORT}`));
 });
 
 // app.use(express.static(__dirname + "./../build"));
@@ -85,4 +86,11 @@ app.get("/auth/logout", (req,res)=>{
     console.log(req.user)
 })
 
-app.listen(SERVER_PORT, ()=>console.log(`Listening on port: ${SERVER_PORT}`));
+
+app.get("/api/displayProduct", (req,res)=>{
+    const db = app.get("db")
+    db.display_product().then(products=>{
+        res.status(200).send(products)
+    })
+})
+

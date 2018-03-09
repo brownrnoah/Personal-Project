@@ -3,17 +3,35 @@
     grid-template-columns: repeat(5, 15vw);
     grid-gap: calc(15vw/4);
     margin: 5vw;
-}
-
-.wrapper div{
-    position: relative;
-    background-color: #b1e8af;;
-    height: 15vw;
+    margin-top: 10vw;
 }
 
 .wrapper button{
     width: 95px;
-    position: absolute;
-    left: 35%;
-    bottom: 15px;
+}
+.product_box {
+    border-radius: 5px;
+    background-color: #b1e8af;;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.placeholder {
+    width: 95%;
+    height: 85%;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+
+.placeholder img{
+    height: 75%;
+    width: 100%;
+}
+
+.product_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -14,9 +14,7 @@ export default class Routes extends Component {
                 <Route path="/menu" component={Menu} />
                 <Route path="/about" component={About} />
                 <Route path="/cart" component={ShoppingCart} />
-                <Route to="/userprofile" component={UserProfile} />
-                <Route to="" component="" />
-                <Route to="" component="" />
+                <Route path="/userprofile" component={UserProfile} />
             </Switch>
         )
     }

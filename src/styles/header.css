@@ -1,4 +1,6 @@
 .main_header{
+    position: fixed;
+    top: 0px;
     height: 65px;
     width: 100%;
     background-color:  #034e2f;
