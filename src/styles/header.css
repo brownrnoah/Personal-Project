@@ -26,5 +26,5 @@
 
 .main_header button:hover{
     background-color: #15b371;
-    cursor: pointer;
+    cursor: url("./../images/cursor.png"), auto;
 }

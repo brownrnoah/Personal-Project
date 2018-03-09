@@ -8,8 +8,25 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            productList: []
+            productList: [],
+            currentCart: [],
+            cartTotal: 0
         }
+        this.addToCart = this.addToCart.bind(this)
+    }
+
+    addToCart(name, price) {
+        var newItem = [];
+        var newTotal = this.state.cartTotal;
+        newItem = newItem.push(name);
+        newTotal += price;
+
+        this.setState({
+            currentCart: newItem,
+            cartTotal: newTotal
+        })
+        console.log(this.state.currentCart);
+        console.log(this.state.cartTotal);
     }
 
     componentDidMount() {
@@ -29,6 +46,7 @@ class Menu extends Component {
                         name={e.productname}
                         image={e.productimg}
                         price={e.productprice}
+                        handler={this.addToCart}
                     />
                 )
             }
@@ -230,15 +248,71 @@ class Menu extends Component {
         return (
             <div>
                 <Header />
-                <div className="wrapper">
-                    {/* <div className="soups"> */}
-                    {soups}
-                    {/* </div> */}
-                    {/* <div className="appetizers">
+                <div>
+                    <div className="first_food_header"><h1>&darr; &emsp; Soups &emsp; &darr;</h1></div> 
+                    <div className="wrapper soups">
+                        {soups}
+                    </div>
+                    <div className="food_header"><h1>&darr; &emsp; Appetizers &emsp; &darr;</h1></div> 
+                    <div className="wrapper appetizers">
                         {appetizers}
-                    </div> */}
-                    {appetizers}
-
+                    </div>
+                    <div className="food_header"><h1>&darr; &emsp; Fried Rice &emsp; &darr;</h1></div> 
+                    <div className="wrapper friedRice">
+                        {friedRice}
+                    </div>
+                    <div className="food_header"><h1>&darr; &emsp; Lo Mein &emsp; &darr;</h1></div> 
+                    <div className="wrapper loMein">
+                        {loMein}
+                    </div>
+                    <div className="food_header"><h1>Crunchy Chow Mein</h1></div> 
+                    <div className="wrapper crunchyChowMein">
+                        {crunchyChowMein}
+                    </div>
+                    <div className="food_header"><h1>Chicken</h1></div> 
+                    <div className="wrapper chicken">
+                        {chicken}
+                    </div>
+                    <div className="food_header"><h1>Beef</h1></div> 
+                    <div className="wrapper beef">
+                        {beef}
+                    </div>
+                    <div className="food_header"><h1>Pork</h1></div> 
+                    <div className="wrapper pork">
+                        {pork}
+                    </div>
+                    <div className="food_header"><h1>Shrimp</h1></div> 
+                    <div className="wrapper shrimp">
+                        {shrimp}
+                    </div>
+                    <div className="food_header"><h1>Egg Foo Young</h1></div> 
+                    <div className="wrapper eggFooYoung">
+                        {eggFooYoung}
+                    </div>
+                    <div className="food_header"><h1>Sizzling Platters </h1></div> 
+                    <div className="wrapper sizzlingPlatter">
+                        {sizzlingPlatter}
+                    </div>
+                    <div className="food_header"><h1>Pan Fried Noodles</h1></div> 
+                    <div className="wrapper panFriedNoodles">
+                        {panFriedNoodles}
+                    </div>
+                    <div className="food_header"><h1>Noodle Soups</h1></div> 
+                    <div className="wrapper noodleSoups">
+                        {noodleSoups}
+                    </div>
+                    <div className="food_header"><h1>Chef Specials</h1></div> 
+                    <div className="wrapper chefSpecials">
+                        {chefSpecials}
+                    </div>
+                    <div className="food_header"><h1>Special Combination</h1></div> 
+                    <div className="wrapper specialCombination">
+                        {specialCombination}
+                    </div>
+                    <div className="food_header"><h1>Side Orders</h1></div> 
+                    <div className="wrapper sideOrders">
+                        {sideOrders}
+                    </div>
                 </div>
             </div>
         )
