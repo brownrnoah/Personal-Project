@@ -3,11 +3,11 @@
     grid-template-columns: repeat(5, 15vw);
     grid-gap: calc(15vw/4);
     margin: 5vw;
-    /* margin-top: 10vw; */
 }
 
 .wrapper button{
     width: 95px;
+    cursor: url("./../images/cursor.png"), auto;
 }
 .product_box {
     border-radius: 5px;
@@ -43,9 +43,8 @@
 .first_food_header{
     margin-top: 10vw;
     height: 65px;
-    width: 100%;
-    background-color:  #034e2f;
-    opacity: 0.75;
+    width: 100vw;
+    background-color:  rgba(7,64,38, 0.75);
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -55,9 +54,8 @@
 .food_header{
     margin-top: 5vw;
     height: 65px;
-    width: 100%;
-    background-color:  #034e2f;
-    opacity: 0.75;
+    width: 100vw;
+    background-color:  rgba(7,64,38, 0.75);
     display: flex;
     justify-content: space-around;
     align-content: center;

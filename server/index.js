@@ -69,7 +69,7 @@ passport.deserializeUser((id,done)=>{
 app.get("/auth", passport.authenticate("auth0"));
 app.get("/auth/callback", passport.authenticate("auth0",{
     successRedirect: "http://localhost:3000/#/userprofile",
-    failureRedirect: "http://localhost:3000"
+    failureRedirect: "http://localhost:3000/"
 }));
 app.get("/auth/me", (req,res)=>{
     if(req.user){
@@ -86,11 +86,12 @@ app.get("/auth/logout", (req,res)=>{
     console.log(req.user)
 })
 
-
 app.get("/api/displayProduct", (req,res)=>{
     const db = app.get("db")
     db.display_product().then(products=>{
         res.status(200).send(products)
     })
 })
+
+
 

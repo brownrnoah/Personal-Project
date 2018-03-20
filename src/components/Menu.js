@@ -3,30 +3,32 @@ import axios from "axios";
 import Header from "./Header";
 import "../styles/menu.css";
 import Product from "./Product";
+import {connect} from "react-redux"
+import {addToCart} from "../ducks/users";
 
 class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
             productList: [],
-            currentCart: [],
-            cartTotal: 0
+            // currentCart: [],
+            // cartTotal: 0
         }
-        this.addToCart = this.addToCart.bind(this)
+        // this.addToCart = this.addToCart.bind(this)
     }
 
-    addToCart(name, price) {
-        var newItem = [];
-        var newTotal = this.state.cartTotal;
-        newItem = newItem.push(name);
-        newTotal += price;
+    addToCart(name,price) {
+        // var newItem = this.state.currentCart;
+        // var newTotal = this.state.cartTotal;
+        // newItem.push(name);
+        // newTotal = (+newTotal + +price).toFixed(2);
 
-        this.setState({
-            currentCart: newItem,
-            cartTotal: newTotal
-        })
-        console.log(this.state.currentCart);
-        console.log(this.state.cartTotal);
+        // this.setState({
+        //     currentCart: newItem,
+        //     cartTotal: newTotal
+        // }) 
+
+        addToCart(name,price)
     }
 
     componentDidMount() {
@@ -38,8 +40,9 @@ class Menu extends Component {
     }
 
     render() {
+        console.log(this.props.currentCart);
+        console.log(this.props.cartTotal);
         var soups = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "soup") {
                 return (
                     <Product
@@ -53,7 +56,6 @@ class Menu extends Component {
         })
 
         var appetizers = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "appetizers") {
                 return (
                     <Product
@@ -66,7 +68,6 @@ class Menu extends Component {
         })
 
         var friedRice = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "friedRice") {
                 return (
                     <Product
@@ -78,7 +79,6 @@ class Menu extends Component {
         })
 
         var loMein = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "loMein") {
                 return (
                     <Product
@@ -90,7 +90,6 @@ class Menu extends Component {
         })
 
         var crunchyChowMein = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "crunchyChowMein") {
                 return (
                     <Product
@@ -102,7 +101,6 @@ class Menu extends Component {
         })
 
         var chicken = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "chicken") {
                 return (
                     <Product
@@ -114,7 +112,6 @@ class Menu extends Component {
         })
 
         var beef = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "beef") {
                 return (
                     <Product
@@ -126,7 +123,6 @@ class Menu extends Component {
         })
 
         var pork = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "pork") {
                 return (
                     <Product
@@ -138,7 +134,6 @@ class Menu extends Component {
         })
 
         var shrimp = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "shrimp") {
                 return (
                     <Product
@@ -150,7 +145,6 @@ class Menu extends Component {
         })
 
         var vegetable = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "vegetable") {
                 return (
                     <Product
@@ -162,7 +156,6 @@ class Menu extends Component {
         })
 
         var eggFooYoung = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "eggFooYoung") {
                 return (
                     <Product
@@ -174,7 +167,6 @@ class Menu extends Component {
         })
 
         var sizzlingPlatter = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "sizzlingPlatter") {
                 return (
                     <Product
@@ -186,7 +178,6 @@ class Menu extends Component {
         })
 
         var panFriedNoodles = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "panFriedNoodles") {
                 return (
                     <Product
@@ -198,7 +189,6 @@ class Menu extends Component {
         })
 
         var noodleSoups = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "noodleSoups") {
                 return (
                     <Product
@@ -210,7 +200,6 @@ class Menu extends Component {
         })
 
         var chefSpecials = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "chefSpecials") {
                 return (
                     <Product
@@ -222,7 +211,6 @@ class Menu extends Component {
         })
 
         var specialCombination = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "specialCombination") {
                 return (
                     <Product
@@ -234,7 +222,6 @@ class Menu extends Component {
         })
 
         var sideOrders = this.state.productList.map(e => {
-            console.log(e)
             if (e.producttype === "sideOrders") {
                 return (
                     <Product
@@ -319,4 +306,11 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+function mapStateToProps(state){
+    return{
+        currentCart: state.currentCart,
+        cartTotal: state.cartTotal
+    }
+}
+
+export default connect(mapStateToProps, {addToCart})(Menu)

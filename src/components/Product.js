@@ -3,7 +3,6 @@ import "../styles/menu.css";
 
 class Product extends Component{
     render(){
-        console.log(this.props)
         return(
             <div className = 'product_box'>
                 <div className = 'placeholder'>
@@ -12,7 +11,7 @@ class Product extends Component{
                 </div>
                 <div className="product_info">
                 <p>${this.props.price} &nbsp; </p>
-                <button type='' onClick={() => this.props.handler(this.props.name,this.props.price)} className=''>Add to Order</button>
+                <button type='' onClick={() => this.props.addToCart(this.props.name,this.props.price)} className=''>Add to Order</button>
                 </div> 
             </div>
         )

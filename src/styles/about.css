@@ -1,0 +1,47 @@
+.about_page{
+    display: flex;
+    justify-content: center;
+}
+
+.about_body{
+    color: #b1e8af;
+    border-radius: 40px;
+    display: grid;
+    grid-template-columns: 42% 42%;
+    grid-template-rows: 42% 42%;
+    grid-gap: 5%;
+    justify-content: center;
+    padding-top: 5%;
+    background-color: #034e2f;
+    height: 120vh;
+    width: 80%;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
+
+.about_photo{
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.photo{
+    border-radius: 5px;
+}
+
+.about_text{
+}
+
+.google_map{
+    height: 100%;
+    width: 100%;
+}
+
+.facebook{
+    cursor: url("./../images/cursor.png"), auto;
+    width: 100px;
+}
+
+.photo{
+    width: 100%;
+    height: 100%
+}
