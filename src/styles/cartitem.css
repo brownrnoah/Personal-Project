@@ -1,0 +1,43 @@
+.item_container{
+    /* position: relative; */
+    min-height: 20vh !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px !important;
+    font-size: 20px;
+}
+.item_image {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    margin-left: 20px;
+}
+.item_image img{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.item_content{
+    margin: auto;
+}
+
+.item_info{
+    padding-top: 20px;
+}
+
+.button_box{
+    width: 220px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.item_price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}

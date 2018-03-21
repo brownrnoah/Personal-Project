@@ -4,7 +4,6 @@ import Routes from "./Routes.js"
 
 class App extends Component {
   render() {
-    console.log("Hello")
     return (
       <div className="App">
         <Routes/>

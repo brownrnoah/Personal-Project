@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import "../styles/userprofile.css";
+import {connect} from "react-redux"
+import {getUser} from "../ducks/users";
 
 class UserProfile extends Component{
 
-    // componentDidMount() {
-    //     axios.get("/api/displayProduct").then((res) => {
-    //         this.setState({
-    //             productList: res.data
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        this.props.getUser()
+    }
 
     render(){
+        console.log(this.props, 'props in this component')
         return(
             <div>
                 <Header/>                
@@ -34,4 +33,11 @@ class UserProfile extends Component{
     }
 }
 
-export default UserProfile;
+function mapStateToProps(state){
+    console.log(state)
+    return{
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps, {getUser})(UserProfile)

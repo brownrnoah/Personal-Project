@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const bodyParser = require("body-parser");
 const session = require("express-session");
 const passport = require("passport");
 const massive = require("massive");
@@ -16,6 +17,8 @@ const {
 } = process.env
 
 const app = express();
+
+app.use(bodyParser.json())
 
 massive(CONNECTION_STRING).then(db => {
     app.set("db",db);
@@ -43,26 +46,26 @@ passport.use( new Auth0Strategy({
    const db = app.get("db")
    db.find_user([profile.id]).then(users=>{
        if(!users[0]){
-           db.create_user([profile.id]).then(res=>{
-                done(null,res[0].id);
+           db.create_user([profile.id]).then(users=>{
+                return done(null,users[0].userid);
            })
        }
        else{
-           done(null,users[0].id)
+           return done(null,users[0].userid)
        }
    })
 }));
 
 passport.serializeUser((id,done)=>{
-    done(null,id);
+    return done(null,id);
 });
 
 //All user information is stored on req.user
 passport.deserializeUser((id,done)=>{
-    console.log(id)
+    console.log('deserialize', id)
     app.get("db").find_session_user([id]).then(user=>{
-        console.log(user)
-        done(null,user[0])
+        console.log(user, 'user from db')
+        return done(null,user[0])
     })
 });
 
@@ -72,6 +75,7 @@ app.get("/auth/callback", passport.authenticate("auth0",{
     failureRedirect: "http://localhost:3000/"
 }));
 app.get("/auth/me", (req,res)=>{
+    console.log(req.user, 'requser')
     if(req.user){
         res.status(200).send(req.user);
     }
@@ -83,7 +87,6 @@ app.get("/auth/logout", (req,res)=>{
     req.logOut();
     req.session.destroy();
     res.redirect("http://localhost:3000/")
-    console.log(req.user)
 })
 
 app.get("/api/displayProduct", (req,res)=>{

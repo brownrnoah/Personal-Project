@@ -28,14 +28,18 @@
     grid-row: 1 / 3;
     border-radius: 5px;
     align-items: center;
+    max-height: 100vh;
 }
 
+
 .order_list{
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: left;
     color: black;
+    max-height: 100%;
+    overflow: scroll;
 }
 
 .your_cart{

@@ -10,24 +10,11 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            productList: [],
-            // currentCart: [],
-            // cartTotal: 0
+            productList: []
         }
-        // this.addToCart = this.addToCart.bind(this)
     }
 
     addToCart(name,price) {
-        // var newItem = this.state.currentCart;
-        // var newTotal = this.state.cartTotal;
-        // newItem.push(name);
-        // newTotal = (+newTotal + +price).toFixed(2);
-
-        // this.setState({
-        //     currentCart: newItem,
-        //     cartTotal: newTotal
-        // }) 
-
         addToCart(name,price)
     }
 
@@ -307,6 +294,7 @@ class Menu extends Component {
 }
 
 function mapStateToProps(state){
+    console.log(state)
     return{
         currentCart: state.currentCart,
         cartTotal: state.cartTotal

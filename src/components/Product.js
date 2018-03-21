@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../styles/menu.css";
+import {connect} from "react-redux"
+import {addToCart} from "../ducks/users";
 
 class Product extends Component{
     render(){
@@ -11,11 +13,23 @@ class Product extends Component{
                 </div>
                 <div className="product_info">
                 <p>${this.props.price} &nbsp; </p>
-                <button type='' onClick={() => this.props.addToCart(this.props.name,this.props.price)} className=''>Add to Order</button>
+                <button type='' onClick={() => this.props.addToCart({
+                    name:this.props.name,
+                    price:this.props.price,
+                    image:this.props.image
+                    })} className=''>Add to Order</button>
                 </div> 
             </div>
         )
     }
 }
 
-export default Product;
+function mapStateToProps(state){
+    console.log(state)
+    return{
+        currentCart: state.currentCart,
+        cartTotal: state.cartTotal
+    }
+}
+
+export default connect(mapStateToProps, {addToCart})(Product)

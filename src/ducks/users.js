@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from 'sweetalert2';
 
 const initialState = {
     user: {},
@@ -8,9 +9,11 @@ const initialState = {
 
 const GET_USER = "GET_USER";
 const ADDTOCART = "ADDTOCART";
+const REMOVEFROMCART = "REMOVEFROMCART";
 
 export function getUser() {
     let userData = axios.get("/auth/me").then(res => {
+        console.log(res.data)
         return res.data;
     })
     return {
@@ -20,10 +23,29 @@ export function getUser() {
 
 }
 
-export function addToCart(name, price) {
+export function addToCart(product) {
+    swal({
+        title:"Success!",
+        text: "Item was added to your cart",
+        timer: 1000,
+        showConfirmButton: false
+    });
     return {
         type: ADDTOCART,
-        payload: { name, price }
+        payload: product
+    }
+}
+
+export function removeFromCart(index) {
+    swal({
+        title:"Success!",
+        text: "Item was removed from your cart",
+        timer: 1000,
+        showConfirmButton: false
+    });
+    return {
+        type: REMOVEFROMCART,
+        payload: index
     }
 }
 
@@ -36,7 +58,13 @@ export default function reducer(state = initialState, action) {
         case ADDTOCART:
             var newItem = state.currentCart;
             var newTotal = state.cartTotal;
-            newItem.push(action.payload.name);
+            newItem.push(action.payload);
+            newTotal = (+newTotal + +action.payload.price).toFixed(2);
+            return Object.assign({}, state, {currentCart:newItem, cartTotal:newTotal})
+        case REMOVEFROMCART:
+            var newItem = state.currentCart;
+            var newTotal = state.cartTotal;
+            newItem.splice(action.payload,1)
             newTotal = (+newTotal + +action.payload.price).toFixed(2);
             return Object.assign({}, state, {currentCart:newItem, cartTotal:newTotal})
         default:
