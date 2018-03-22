@@ -3,46 +3,30 @@ import Header from "./Header";
 import "../styles/shoppingcart.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
-import { addToCart } from "../ducks/users";
 import CartItem from "./CartItem";
 
 class ShoppingCart extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            productArray: this.props.currentCart,
-            orderTotal: (+this.props.cartTotal).toFixed(2)
-        }
-    }
-
-    componentWillReceiveProps(){
-        
-    }
     
-
     render() {
-        console.log(this.state.productArray)
         var tax = .0675;
-        var estimatedTax = (this.state.orderTotal * tax).toFixed(2);
-        var total = (+estimatedTax + +this.state.orderTotal).toFixed(2);
+        var estimatedTax = (this.props.cartTotal * tax).toFixed(2);
+        var total = (+estimatedTax + +this.props.cartTotal).toFixed(2);
 
-        var cartItem = this.state.productArray.map((e,index) => {
-            return <CartItem 
-            index = {index}
-            name= {e.name}
-            price= {e.price}
-            image= {e.image} />
+        var cartItem = this.props.currentCart.map((e, index) => {
+            return <CartItem key={index}
+                index={index}
+                name={e.name}
+                price={e.price}
+                image={e.image} />
         })
         if (cartItem.length === 0) {
             cartItem = (
-                <div>
+                <div className="emptyCart">
                     <p>You currently don't have any items on your order.</p>
                     <p>Return to <Link to="/menu">Menu</Link> to add items to your order.</p>
                 </div>
             )
         }
-
-        console.log(cartItem)
         return (
             <div>
                 <Header />
@@ -57,7 +41,7 @@ class ShoppingCart extends Component {
                         <div className="orderSummary">
                             <h2>Order Summary</h2>
                             <hr />
-                            <h3>Subtotal: $ {this.state.orderTotal}</h3>
+                            <h3>Subtotal: $ {this.props.cartTotal}</h3>
                             <hr />
                             <h3>Estimated Tax: $ {estimatedTax}</h3>
                             <hr />
@@ -73,11 +57,11 @@ class ShoppingCart extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state.cartTotal)
     return {
         currentCart: state.currentCart,
         cartTotal: state.cartTotal
     }
-    console.log(state)
 }
 
 export default connect(mapStateToProps, {})(ShoppingCart)

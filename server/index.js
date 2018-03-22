@@ -41,12 +41,13 @@ passport.use( new Auth0Strategy({
     domain: DOMAIN,
     clientID: CLIENT_ID,
     clientSecret: CLIENT_SECRET,
-    callbackURL: CALLBACK_URL
+    callbackURL: CALLBACK_URL,
+    scope: 'openid profile'
 }, function(accessToken,refreshToken,extraParams,profile,done){
    const db = app.get("db")
    db.find_user([profile.id]).then(users=>{
        if(!users[0]){
-           db.create_user([profile.id]).then(users=>{
+           db.create_user([profile.id,profile.name.givenName,profile.name.familyName]).then(users=>{
                 return done(null,users[0].userid);
            })
        }
@@ -62,9 +63,7 @@ passport.serializeUser((id,done)=>{
 
 //All user information is stored on req.user
 passport.deserializeUser((id,done)=>{
-    console.log('deserialize', id)
     app.get("db").find_session_user([id]).then(user=>{
-        console.log(user, 'user from db')
         return done(null,user[0])
     })
 });
@@ -75,7 +74,6 @@ app.get("/auth/callback", passport.authenticate("auth0",{
     failureRedirect: "http://localhost:3000/"
 }));
 app.get("/auth/me", (req,res)=>{
-    console.log(req.user, 'requser')
     if(req.user){
         res.status(200).send(req.user);
     }
@@ -96,5 +94,12 @@ app.get("/api/displayProduct", (req,res)=>{
     })
 })
 
+app.put("/api/updateUser", (req,res)=>{
+    console.log(req.body)
+    const db = app.get("db")
+    db.update_user([req.user.userid,req.body.firstname,req.body.lastname,req.body.address,req.body.city,req.body.phone,req.body.email]).then(user=>{
+        res.status(200).send(user)
+    })
+})
 
 

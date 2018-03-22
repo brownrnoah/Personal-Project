@@ -27,8 +27,7 @@ class Menu extends Component {
     }
 
     render() {
-        console.log(this.props.currentCart);
-        console.log(this.props.cartTotal);
+        // eslint-disable-next-line
         var soups = this.state.productList.map(e => {
             if (e.producttype === "soup") {
                 return (
@@ -41,7 +40,7 @@ class Menu extends Component {
                 )
             }
         })
-
+        // eslint-disable-next-line
         var appetizers = this.state.productList.map(e => {
             if (e.producttype === "appetizers") {
                 return (
@@ -49,189 +48,190 @@ class Menu extends Component {
                         name={e.productname}
                         image={e.productimg}
                         price={e.productprice}
+                        handler={this.addToCart}
                     />
                 )
             }
         })
 
-        var friedRice = this.state.productList.map(e => {
-            if (e.producttype === "friedRice") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var friedRice = this.state.productList.map(e => {
+        //     if (e.producttype === "friedRice") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var loMein = this.state.productList.map(e => {
-            if (e.producttype === "loMein") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var loMein = this.state.productList.map(e => {
+        //     if (e.producttype === "loMein") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var crunchyChowMein = this.state.productList.map(e => {
-            if (e.producttype === "crunchyChowMein") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var crunchyChowMein = this.state.productList.map(e => {
+        //     if (e.producttype === "crunchyChowMein") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var chicken = this.state.productList.map(e => {
-            if (e.producttype === "chicken") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var chicken = this.state.productList.map(e => {
+        //     if (e.producttype === "chicken") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var beef = this.state.productList.map(e => {
-            if (e.producttype === "beef") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var beef = this.state.productList.map(e => {
+        //     if (e.producttype === "beef") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var pork = this.state.productList.map(e => {
-            if (e.producttype === "pork") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var pork = this.state.productList.map(e => {
+        //     if (e.producttype === "pork") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var shrimp = this.state.productList.map(e => {
-            if (e.producttype === "shrimp") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var shrimp = this.state.productList.map(e => {
+        //     if (e.producttype === "shrimp") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var vegetable = this.state.productList.map(e => {
-            if (e.producttype === "vegetable") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var vegetable = this.state.productList.map(e => {
+        //     if (e.producttype === "vegetable") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var eggFooYoung = this.state.productList.map(e => {
-            if (e.producttype === "eggFooYoung") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var eggFooYoung = this.state.productList.map(e => {
+        //     if (e.producttype === "eggFooYoung") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var sizzlingPlatter = this.state.productList.map(e => {
-            if (e.producttype === "sizzlingPlatter") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var sizzlingPlatter = this.state.productList.map(e => {
+        //     if (e.producttype === "sizzlingPlatter") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var panFriedNoodles = this.state.productList.map(e => {
-            if (e.producttype === "panFriedNoodles") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var panFriedNoodles = this.state.productList.map(e => {
+        //     if (e.producttype === "panFriedNoodles") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var noodleSoups = this.state.productList.map(e => {
-            if (e.producttype === "noodleSoups") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var noodleSoups = this.state.productList.map(e => {
+        //     if (e.producttype === "noodleSoups") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var chefSpecials = this.state.productList.map(e => {
-            if (e.producttype === "chefSpecials") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var chefSpecials = this.state.productList.map(e => {
+        //     if (e.producttype === "chefSpecials") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var specialCombination = this.state.productList.map(e => {
-            if (e.producttype === "specialCombination") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var specialCombination = this.state.productList.map(e => {
+        //     if (e.producttype === "specialCombination") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
-        var sideOrders = this.state.productList.map(e => {
-            if (e.producttype === "sideOrders") {
-                return (
-                    <Product
-                        image={e.productimg}
-                        price={e.productprice}
-                    />
-                )
-            }
-        })
+        // var sideOrders = this.state.productList.map(e => {
+        //     if (e.producttype === "sideOrders") {
+        //         return (
+        //             <Product
+        //                 image={e.productimg}
+        //                 price={e.productprice}
+        //             />
+        //         )
+        //     }
+        // })
 
         return (
             <div>
                 <Header />
                 <div>
-                    <div className="first_food_header"><h1>&darr; &emsp; Soups &emsp; &darr;</h1></div> 
+                    <div className="first_food_header"><h1>&darr; &emsp; SOUPS &emsp; &darr;</h1></div> 
                     <div className="wrapper soups">
                         {soups}
                     </div>
-                    <div className="food_header"><h1>&darr; &emsp; Appetizers &emsp; &darr;</h1></div> 
+                    <div className="food_header"><h1>&darr; &emsp; APPETIZERS &emsp; &darr;</h1></div> 
                     <div className="wrapper appetizers">
                         {appetizers}
                     </div>
-                    <div className="food_header"><h1>&darr; &emsp; Fried Rice &emsp; &darr;</h1></div> 
+                    {/* <div className="food_header"><h1>&darr; &emsp; Fried Rice &emsp; &darr;</h1></div> 
                     <div className="wrapper friedRice">
                         {friedRice}
                     </div>
@@ -286,7 +286,7 @@ class Menu extends Component {
                     <div className="food_header"><h1>Side Orders</h1></div> 
                     <div className="wrapper sideOrders">
                         {sideOrders}
-                    </div>
+                    </div> */}
                 </div>
             </div>
         )

@@ -1,2 +1,2 @@
-INSERT INTO users(authid)
-VALUES ($1)
+INSERT INTO users(authid,firstname,lastname)
+VALUES ($1,$2,$3)

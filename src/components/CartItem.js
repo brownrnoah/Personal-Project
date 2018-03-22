@@ -7,14 +7,14 @@ class CartItem extends Component{
     render(){
         return(
             <div className = 'item_container'>
-                <div className = "item_image"><img src={this.props.image}/></div>
+                <div className = "item_image"><img alt="Product" src={this.props.image}/></div>
                 <div className = "item_content">
                     <div className = "item_info">{this.props.name}</div>
                     <br/>
                     <br/>
                     <br/>
                     <div className = "button_box">
-                    <button type='' className="" onClick={() => this.props.removeFromCart(this.props.index)}>Remove</button>
+                    <button type='' className="" onClick={() => this.props.removeFromCart({index:this.props.index,price:this.props.price})}>Remove</button>
                     <button type='' className=''>Change Quantity</button></div> 
                 </div> 
                 <div className = "item_price">{this.props.price}</div>  
@@ -24,7 +24,6 @@ class CartItem extends Component{
 }
 
 function mapStateToProps(state){
-    console.log(state)
     return{
         currentCart: state.currentCart,
         cartTotal: state.cartTotal

@@ -8,11 +8,12 @@ class Product extends Component{
         return(
             <div className = 'product_box'>
                 <div className = 'placeholder'>
+                    
+                    <img alt="Product" src={this.props.image}/>
                     <p>{this.props.name}</p>
-                    <img src={this.props.image}/>
                 </div>
                 <div className="product_info">
-                <p>${this.props.price} &nbsp; </p>
+                ${this.props.price} &nbsp;
                 <button type='' onClick={() => this.props.addToCart({
                     name:this.props.name,
                     price:this.props.price,
@@ -25,7 +26,6 @@ class Product extends Component{
 }
 
 function mapStateToProps(state){
-    console.log(state)
     return{
         currentCart: state.currentCart,
         cartTotal: state.cartTotal

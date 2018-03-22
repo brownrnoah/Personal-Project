@@ -16,7 +16,7 @@
 }
 
 .order_history{
-    background-color: white;
+    background-color: #191919;
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     border-radius: 5px;
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: white;
+    background-color: #191919;
     padding: 25px;
     border-radius: 5px;
 }
@@ -46,6 +46,17 @@
     align-items: center;
     padding-left: 20px;
     background-color: #eeeeee;
-    height: 40px;
+    height: 35px;
     border-radius: 5px;
+}
+
+.user_info button{
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    background-color: #eb5424;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    width: 50%
 }

@@ -12,16 +12,18 @@
 .product_box {
     border-radius: 5px;
     background-color: #b1e8af;
+    /* opacity: .75; */
     height: 20vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-weight: bold;
 }
 .placeholder {
     width: 95%;
     height: 85%;
-    padding-top: 2.5px;
+    padding-top: 5px;
     padding-bottom: 2.5px;
 }
 
@@ -30,10 +32,15 @@
     width: 100%;
 }
 
+.placeholder p{
+    margin-bottom: 0px;
+}
+
 .product_info{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 30px;
 }
 
 /* .soups{

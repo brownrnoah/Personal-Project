@@ -12,7 +12,8 @@
     grid-gap: 5%;
     justify-content: center;
     padding-top: 5%;
-    background-color: #034e2f;
+    /* background-color: #034e2f; */
+    background-color: #536b74;
     height: 120vh;
     width: 80%;
     margin-top: 10vw;
@@ -40,6 +41,7 @@
     color: black;
     max-height: 100%;
     overflow: scroll;
+    background-color: white;
 }
 
 .your_cart{
@@ -78,4 +80,8 @@
     font-size: 12px;
     color: lightgray;
     cursor: url("./../images/cursor.png"), auto;
+}
+
+.emptyCart{
+    margin-left: 25px;
 }

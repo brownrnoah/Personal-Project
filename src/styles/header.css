@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo:400,700');
+
 .main_header{
     position: fixed;
     top: 0px;
@@ -14,6 +16,9 @@
     margin-top: 20px;
     border: none;
     border-radius: 5px;
+    /* font-family: 'Arimo', sans-serif;
+    font-size: 20px;
+    font-weight: bold; */
     font-family: "shojumaru";
     color: #034e2f;
     box-shadow: 2px 2px black;
