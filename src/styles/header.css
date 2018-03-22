@@ -11,23 +11,25 @@
     align-content: center;
 }
 
-.main_header button{
-    background-color: #b1e8af;
+a{
+    text-decoration: none;
+}
+
+.main_header div{
     margin-top: 20px;
     border: none;
-    border-radius: 5px;
-    /* font-family: 'Arimo', sans-serif;
+    font-family: 'Arimo', sans-serif;
     font-size: 20px;
-    font-weight: bold; */
-    font-family: "shojumaru";
-    color: #034e2f;
-    box-shadow: 2px 2px black;
+    font-weight: bold;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
     padding: 5px;
     padding-left: 25px;
     padding-right: 25px;
 }
 
-.main_header button:hover{
-    background-color: #15b371;
+.main_header div:hover{
+    background-color: #161616;
     cursor: url("./../images/cursor.png"), auto;
 }

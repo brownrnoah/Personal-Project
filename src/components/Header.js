@@ -6,13 +6,13 @@ class Header extends Component{
     render(){
         return(
             <div className="main_header">
-                <Link to="/"><button type='' className=''>Home</button></Link>
-                <Link to="/menu"><button type='' className=''>Our Menu</button></Link>
-                <Link to="/about"><button type='' className=''>About</button></Link>
-                <Link to="/cart"><button type='' className=''>Cart</button></Link>
-                <Link to="/userprofile"><button type='' className=''>Your Profile</button></Link>
-                <a href={ process.env.REACT_APP_LOGIN }><button type='' className=''>Login</button></a>
-                <a href={ process.env.REACT_APP_LOGOUT }><button type='' className=''>Logout</button></a>
+                <Link to="/"><div>Home</div></Link>
+                <Link to="/menu"><div>Our Menu</div></Link>
+                <Link to="/about"><div>About</div></Link>
+                <Link to="/cart">Cart</Link>
+                <Link to="/userprofile">Your Profile</Link>
+                <a href={ process.env.REACT_APP_LOGIN }>Login</a>
+                <a href={ process.env.REACT_APP_LOGOUT }>Logout</a>
             </div> 
         )
     }
