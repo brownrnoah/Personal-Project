@@ -61,12 +61,12 @@ class UserProfile extends Component{
                         <div><h1>Past Order History</h1></div>
                     </div> 
                     <div className="user_info">
-                        <div>First Name {this.props.user.firstname}</div>
-                        <div>Last Name {this.props.user.lastname}</div> 
-                        <div>Address {this.props.user.address}</div> 
-                        <div>City {this.props.user.city}</div> 
-                        <div>Phone {this.props.user.phone}</div> 
-                        <div>Email {this.props.user.email}</div> 
+                        <div className="info_box"><div className="category">First Name</div><div className="info">{this.props.user.firstname}</div></div> 
+                        <div className="info_box"><div className="category">Last Name</div><div className="info">{this.props.user.lastname}</div></div> 
+                        <div className="info_box"><div className="category">Address</div><div className="info">{this.props.user.address}</div></div> 
+                        <div className="info_box"><div className="category">City</div><div className="info">{this.props.user.city}</div></div> 
+                        <div className="info_box"><div className="category">Phone</div><div className="info">{this.props.user.phone}</div></div> 
+                        <div className="info_box"><div className="category">Email</div><div className="info">{this.props.user.email}</div></div> 
                         <button type='' onClick={()=> this.handler()} className=''>UPDATE PROFILE</button>
                     </div> 
                 </div> 

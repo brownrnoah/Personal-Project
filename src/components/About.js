@@ -14,8 +14,8 @@ class About extends Component {
                 <div className="about_body">
                     <div className="about_photo"><img alt="Product" src={photo} className="photo" /></div>
                     <div className="about_text">
-                        <h1>Call us to ask a question or make an order.</h1>
-                        <h3>We do carry out or delivery. Delivery must be a minumum order of $15.00</h3>
+                        <h1>Call us to ask a question or make an order</h1>
+                        <h3>We do carry out or delivery<br/> Delivery must be a minumum order of $15.00</h3>
                         <h4>440 West 300 South | Provo, UT 84601</h4>
                         <h4>Telephone: 801-812-1173</h4>
                         <a href="https://www.facebook.com/Saigon-Cafe-237398185226/"><img alt="facebook" src={logo} className="facebook" /></a>

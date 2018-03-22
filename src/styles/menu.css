@@ -8,10 +8,11 @@
 .wrapper button{
     width: 95px;
     cursor: url("./../images/cursor.png"), auto;
+    background-color: #fca311;
 }
 .product_box {
     border-radius: 5px;
-    background-color: #b1e8af;
+    background-color: rgb(39,39,39);
     /* opacity: .75; */
     height: 20vw;
     display: flex;
@@ -19,6 +20,7 @@
     align-items: center;
     flex-direction: column;
     font-weight: bold;
+    color: white;
 }
 .placeholder {
     width: 95%;
@@ -51,20 +53,20 @@
     margin-top: 10vw;
     height: 65px;
     width: 100vw;
-    background-color:  rgba(7,64,38, 0.75);
+    background-color:  rgb(39,39,39);
     display: flex;
     justify-content: space-around;
     align-content: center;
-    color: #b1e8af;
+    color: white;
 }
 
 .food_header{
     margin-top: 5vw;
     height: 65px;
     width: 100vw;
-    background-color:  rgba(7,64,38, 0.75);
+    background-color:  rgb(39,39,39);
     display: flex;
     justify-content: space-around;
     align-content: center;
-    color: #b1e8af;
+    color: white;
 }

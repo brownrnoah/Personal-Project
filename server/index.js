@@ -25,7 +25,7 @@ massive(CONNECTION_STRING).then(db => {
     app.listen(SERVER_PORT, ()=>console.log(`Listening on port: ${SERVER_PORT}`));
 });
 
-// app.use(express.static(__dirname + "./../build"));
+app.use(express.static(__dirname + "./../build"));
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -70,8 +70,8 @@ passport.deserializeUser((id,done)=>{
 
 app.get("/auth", passport.authenticate("auth0"));
 app.get("/auth/callback", passport.authenticate("auth0",{
-    successRedirect: "http://localhost:3000/#/userprofile",
-    failureRedirect: "http://localhost:3000/"
+    successRedirect: process.env.PRIVATE_PAGE,
+    failureRedirect: process.env.HOMEPAGE
 }));
 app.get("/auth/me", (req,res)=>{
     if(req.user){
@@ -84,7 +84,7 @@ app.get("/auth/me", (req,res)=>{
 app.get("/auth/logout", (req,res)=>{
     req.logOut();
     req.session.destroy();
-    res.redirect("http://localhost:3000/")
+    res.redirect(process.env.REACT_APP_LOGOUT)
 })
 
 app.get("/api/displayProduct", (req,res)=>{
