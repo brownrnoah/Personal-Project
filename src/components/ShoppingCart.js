@@ -49,6 +49,19 @@ class ShoppingCart extends Component {
                             <h2>Total: $ {total}</h2>
                             <hr />
                             <div><p>CHECKOUT</p></div>
+                            <form action="/api/charge" method="post">
+                                <script
+                                src="https://checkout.stripe.com/checkout.js"
+                                className="stripe-button"
+                                data-key="pk_test_y7qfmukzRqOnsfggoDxcHaAN"
+                                data-amount={total}
+                                data-name="Food"
+                                data-description="Food"
+                                data-locale="auto"
+                                currency="usd"
+                                >
+                                </script>
+                            </form>
                         </div>
                     </div>
                 </div>

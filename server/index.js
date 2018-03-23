@@ -5,6 +5,7 @@ const session = require("express-session");
 const passport = require("passport");
 const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
+const stripe = require("stripe")("sk_test_zrTNBBTjFf0UPRrStKb8QqIT");
 
 const {
     SERVER_PORT,
@@ -100,6 +101,10 @@ app.put("/api/updateUser", (req,res)=>{
     db.update_user([req.user.userid,req.body.firstname,req.body.lastname,req.body.address,req.body.city,req.body.phone,req.body.email]).then(user=>{
         res.status(200).send(user)
     })
+})
+
+app.post("/api/charge", (req,res)=>{
+    
 })
 
 
