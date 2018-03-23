@@ -4,7 +4,7 @@
     grid-template-rows: 42% 42%;
     grid-gap: 5%;
     padding-top: 5%;
-    background-color: #034e2f;
+    background: linear-gradient( black,#536b74,#536b74,black);
     height: 120vh;
     width: 80%;
     margin-top: 10vw;
@@ -16,7 +16,7 @@
 }
 
 .order_history{
-    background-color: #191919;
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     border-radius: 5px;
@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #191919;
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     padding: 25px;
     border-radius: 5px;
 }
@@ -73,9 +73,14 @@
     margin-left: auto;
     margin-right: auto;
     font-weight: bold;
-    background-color: #eb5424;
+    background: linear-gradient(#fca311, #E69510,#fca311);
+    cursor: url("./../images/cursor.png"), auto;
     height: 40px;
     border: none;
     border-radius: 5px;
     width: 50%
+}
+
+.user_info button:hover{
+    background: #15b371;
 }

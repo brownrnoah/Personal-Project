@@ -8,6 +8,7 @@ import CartItem from "./CartItem";
 class ShoppingCart extends Component {
     
     render() {
+        var subtotal = (+this.props.cartTotal).toFixed(2);
         var tax = .0675;
         var estimatedTax = (this.props.cartTotal * tax).toFixed(2);
         var total = (+estimatedTax + +this.props.cartTotal).toFixed(2);
@@ -41,7 +42,7 @@ class ShoppingCart extends Component {
                         <div className="orderSummary">
                             <h2>Order Summary</h2>
                             <hr />
-                            <h3>Subtotal: $ {this.props.cartTotal}</h3>
+                            <h3>Subtotal: $ {subtotal}</h3>
                             <hr />
                             <h3>Estimated Tax: $ {estimatedTax}</h3>
                             <hr />

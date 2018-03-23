@@ -6,7 +6,7 @@
 }
 
 .about_body{
-    color: #b1e8af;
+    color: white;
     border-radius: 40px;
     display: grid;
     grid-template-columns: 42% 42%;
@@ -14,7 +14,7 @@
     grid-gap: 5%;
     justify-content: center;
     padding-top: 5%;
-    background-color: #034e2f;
+    background: linear-gradient( black,#536b74,#536b74,black);
     height: 120vh;
     width: 80%;
     margin-top: 10vw;

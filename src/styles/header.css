@@ -5,31 +5,42 @@
     top: 0px;
     height: 65px;
     width: 100%;
-    background-color:  rgb(39,39,39);
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
 }
 
-a{
+.main_header a{
     text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    /* display: flex;
+    justify-content: center;
+    height: 65px; */
 }
+/* 
+.main_header i{
+    color: white;
+} */
 
 .main_header div{
-    margin-top: 20px;
     border: none;
     font-family: 'Arimo', sans-serif;
     font-size: 20px;
     font-weight: bold;
     border-radius: 5px;
-    height: 40px;
     color: white;
-    padding: 5px;
     padding-left: 25px;
     padding-right: 25px;
+    padding-top: 21.25px;
+    padding-bottom: 21.25px;
+    
 }
 
-.main_header div:hover{
-    background-color: #161616;
+.main_header a:hover{
+    /* background-color: #161616; */
+    background-color: #15b371;
     cursor: url("./../images/cursor.png"), auto;
 }

@@ -13,7 +13,7 @@
     justify-content: center;
     padding-top: 5%;
     /* background-color: #034e2f; */
-    background-color: #536b74;
+    background: linear-gradient( black,#536b74,#536b74,black);
     height: 120vh;
     width: 80%;
     margin-top: 10vw;
@@ -49,7 +49,7 @@
     padding-left: 25px;
     margin-top: 5%;
     background-color: #eeeeee;
-    width: 90%;
+    width: 80%;
     color: black;
 }
 
@@ -57,7 +57,7 @@
     display: inline;
     color: white;
     justify-content: center;
-    background-color: #191919;
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     grid-column: 3 / 3;
     grid-row: 1 / 2;
     border-radius: 5px;
@@ -73,15 +73,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: grey;
+    cursor: url("./../images/cursor.png"), auto;
+    background: linear-gradient(#fca311, #E69510,#fca311);
     height: 40px;
     width: 80%;
     border-radius: 5px;
+    font-weight: bold;
     font-size: 12px;
-    color: lightgray;
+    color: black;
     cursor: url("./../images/cursor.png"), auto;
 }
-
+.orderSummary div:hover{
+    background: #15b371;
+}
 .emptyCart{
-    margin-left: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }

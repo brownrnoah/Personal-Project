@@ -8,11 +8,20 @@
 .wrapper button{
     width: 95px;
     cursor: url("./../images/cursor.png"), auto;
-    background-color: #fca311;
+    background: linear-gradient(#fca311, #E69510,#fca311);
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
 }
+
+.wrapper button:hover{
+    background: #15b371;
+}
+
 .product_box {
     border-radius: 5px;
-    background-color: rgb(39,39,39);
+    /* background-color: #536b74; */
+    background: linear-gradient(#536b74, black,#536b74);
     /* opacity: .75; */
     height: 20vw;
     display: flex;
@@ -53,7 +62,7 @@
     margin-top: 10vw;
     height: 65px;
     width: 100vw;
-    background-color:  rgb(39,39,39);
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     display: flex;
     justify-content: space-around;
     align-content: center;
@@ -64,7 +73,7 @@
     margin-top: 5vw;
     height: 65px;
     width: 100vw;
-    background-color:  rgb(39,39,39);
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     display: flex;
     justify-content: space-around;
     align-content: center;
