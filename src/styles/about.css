@@ -48,3 +48,21 @@
     width: 100%;
     height: 100%
 }
+
+@media (max-width: 360px){
+    .about_photo{
+        display: none;
+    }
+    .about_text{
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        font-size: 15px;
+    }
+    .google_map{
+        margin-top: 40px;
+        grid-column: 1 / 3;
+        grid-row: 2 / 2;
+        height: 80%;
+        width: 100%;
+    }
+}

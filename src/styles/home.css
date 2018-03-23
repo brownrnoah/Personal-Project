@@ -32,3 +32,15 @@
 .home_slider img{
     border-radius: 10px;
 }
+
+@media (max-width: 360px){
+    .home_slider{
+        width: 100%;
+        margin-top: 200px;
+    }
+    .home_slider img{
+        width: 100%;
+        height: 200px;
+        border-radius: 10px;
+    }
+}

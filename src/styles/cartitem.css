@@ -41,3 +41,17 @@
     justify-content: center;
     margin: auto;
 }
+
+@media (max-width: 360px){
+    .item_info{
+        font-size: 15px;
+    }
+    .button_box{
+        padding-left: 45px;
+        width: 45px;
+    }
+    /* .item_image{
+        height: 95px;
+        width: 95px;
+    } */
+}

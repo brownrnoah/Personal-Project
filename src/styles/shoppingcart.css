@@ -96,3 +96,20 @@
 .StripeCheckout >span:nth-child(1):hover{
     background: #15b371 !important;
 }
+
+@media (max-width: 360px){
+    .orderPreview{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+    .orderSummary{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+    .order_list{
+        font-size: 12px;
+    }
+    .your_cart{
+        font-size: 13px;
+    }
+}
