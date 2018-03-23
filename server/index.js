@@ -6,6 +6,7 @@ const passport = require("passport");
 const massive = require("massive");
 const Auth0Strategy = require("passport-auth0");
 const stripe = require("stripe")("sk_test_zrTNBBTjFf0UPRrStKb8QqIT");
+const cors = require('cors')
 
 const {
     SERVER_PORT,
@@ -19,7 +20,9 @@ const {
 
 const app = express();
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+app.use(cors());
+
 
 massive(CONNECTION_STRING).then(db => {
     app.set("db",db);
@@ -103,8 +106,44 @@ app.put("/api/updateUser", (req,res)=>{
     })
 })
 
-app.post("/api/charge", (req,res)=>{
-    
-})
-
+app.post('/api/payment', function(req, res, next){
+    //convert amount to pennies
+    const amountArray = req.body.amount.toString().split('');
+    const pennies = [];
+    for (var i = 0; i < amountArray.length; i++) {
+      if(amountArray[i] === ".") {
+        if (typeof amountArray[i + 1] === "string") {
+          pennies.push(amountArray[i + 1]);
+        } else {
+          pennies.push("0");
+        }
+        if (typeof amountArray[i + 2] === "string") {
+          pennies.push(amountArray[i + 2]);
+        } else {
+          pennies.push("0");
+        }
+          break;
+      } else {
+          pennies.push(amountArray[i])
+      }
+    }
+    const convertedAmt = parseInt(pennies.join(''));
+  
+    const charge = stripe.charges.create({
+    amount: convertedAmt, // amount in cents, again
+    currency: 'usd',
+    source: req.body.token.id,
+    description: 'Test charge from react app'
+  }, function(err, charge) {
+      if (err){
+        return res.sendStatus(500);
+      }
+      else{
+        return res.sendStatus(200);
+      }
+    // if (err && err.type === 'StripeCardError') {
+    //   // The card has been declined
+    // }
+  });
+  });
 

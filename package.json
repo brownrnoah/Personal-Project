@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "dotenv": "^5.0.1",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
@@ -20,6 +21,7 @@
     "react-scripts": "1.1.1",
     "react-slick": "^0.21.0",
     "react-slick-carousel": "^0.14.9",
+    "react-stripe-checkout": "^2.6.3",
     "redux": "^3.7.2",
     "redux-promise-middleware": "^5.0.0",
     "slick": "^1.12.2",

@@ -68,25 +68,31 @@
     height: .5px; 
 }
 
-.orderSummary div{
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: url("./../images/cursor.png"), auto;
-    background: linear-gradient(#fca311, #E69510,#fca311);
-    height: 40px;
-    width: 80%;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 12px;
-    color: black;
-    cursor: url("./../images/cursor.png"), auto;
-}
-.orderSummary div:hover{
-    background: #15b371;
-}
 .emptyCart{
     margin-left: auto;
     margin-right: auto;
+}
+
+.StripeCheckout{
+    background: none !important;
+}
+
+.StripeCheckout >span:nth-child(1){
+    border: none !important;
+    margin: auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    cursor: url("./../images/cursor.png"), auto !important;
+    background: linear-gradient(#fca311, #E69510,#fca311) !important;
+    height: 40px !important;
+    width: 200px !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    font-size: 14px !important;
+    color: black !important;
+    cursor: url("./../images/cursor.png"), auto !important;
+}
+.StripeCheckout >span:nth-child(1):hover{
+    background: #15b371 !important;
 }

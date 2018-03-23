@@ -4,9 +4,20 @@ import "../styles/shoppingcart.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import CartItem from "./CartItem";
+import StripeCheckout from 'react-stripe-checkout';
 
 class ShoppingCart extends Component {
-    
+    constructor(props) {
+        super(props);
+
+    }
+    // onToken = (token) => {
+    //     token.card = void 0;
+    //     console.log('token', token);
+    //     axios.post("/api/payment"), { token, amount: 100 } ).then(response => {
+    //       alert('we are in business')
+    //     });
+
     render() {
         var subtotal = (+this.props.cartTotal).toFixed(2);
         var tax = .0675;
@@ -48,20 +59,12 @@ class ShoppingCart extends Component {
                             <hr />
                             <h2>Total: $ {total}</h2>
                             <hr />
-                            <div><p>CHECKOUT</p></div>
-                            <form action="/api/charge" method="post">
-                                <script
-                                src="https://checkout.stripe.com/checkout.js"
-                                className="stripe-button"
-                                data-key="pk_test_y7qfmukzRqOnsfggoDxcHaAN"
-                                data-amount={total}
-                                data-name="Food"
-                                data-description="Food"
-                                data-locale="auto"
-                                currency="usd"
-                                >
-                                </script>
-                            </form>
+                            <StripeCheckout
+                                token={this.onToken}
+                                stripeKey="pk_test_y7qfmukzRqOnsfggoDxcHaAN"
+                                amount={total}
+                                data-label="CHECKOUT"
+                            />
                         </div>
                     </div>
                 </div>
