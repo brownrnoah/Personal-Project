@@ -75,3 +75,9 @@
         padding-bottom: 21.25px;
     }
 }
+
+@media (max-width: 320px){
+    .main_header div{
+        font-size: 13px;
+    }
+}

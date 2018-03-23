@@ -139,7 +139,19 @@
         font-size: 15px;
         font-weight: bold;
     }
-    /* swal{
-        width: 40px;
-    } */
+}
+
+@media(max-width: 320px){
+    .wrapper{
+        grid-template-columns: repeat(1, 77vw);
+    }
+    .product_box{
+        margin-left: 47px;
+        height: 70vw;
+        font-size: 15px;
+    }
+    .wrapper button{
+        width: 110px;
+        height: 20px;
+    } 
 }

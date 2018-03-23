@@ -113,3 +113,12 @@
         font-size: 13px;
     }
 }
+
+@media (max-width: 360px){
+    .order_list{
+        font-size: 11px;
+    }
+    .your_cart{
+        font-size: 12px;
+    }
+}

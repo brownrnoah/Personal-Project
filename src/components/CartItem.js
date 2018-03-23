@@ -10,8 +10,6 @@ class CartItem extends Component{
                 <div className = "item_image"><img alt="Product" src={this.props.image}/></div>
                 <div className = "item_content">
                     <div className = "item_info">{this.props.name}</div>
-                    <br/>
-                    <br/>
                     <div className = "button_box">
                     <button type='' className="" onClick={() => this.props.removeFromCart({index:this.props.index,price:this.props.price})}>Remove Item</button>
                     </div> 

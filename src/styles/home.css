@@ -44,3 +44,12 @@
         border-radius: 10px;
     }
 }
+
+@media (max-width: 320px){
+    .home_slider{
+        margin-top: 200px;
+    }
+    .home_slider img{
+        height: 190px;
+    }
+}

@@ -66,3 +66,16 @@
         width: 100%;
     }
 }
+
+@media (max-width: 320px){
+    .about_text{
+        font-size: 14px;
+    }
+    .google_map{
+        margin-top: 40px;
+        grid-column: 1 / 3;
+        grid-row: 2 / 2;
+        height: 80%;
+        width: 100%;
+    }
+}

@@ -107,3 +107,27 @@
         font-size: 12px;
     }
 }
+
+@media (max-width: 360px){
+    .order_history{
+        font-size: 9px;
+    }
+    .user_info{
+        padding-left: 5px;
+        font-size: 10px;
+    }
+    .user_info div{
+        height: 25px;
+    }
+    .user_info button{
+        margin-top: 10px;
+        width: 70%;
+        height: 30px;
+        margin-left: 40px;
+        font-size: 12px;
+    } 
+    .info{
+        width: 65%;
+        font-size: 12px;
+    }
+}
