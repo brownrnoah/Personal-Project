@@ -98,6 +98,25 @@
     background: #15b371 !important;
 }
 
+@media (max-width: 768px){
+    .orderPreview{
+        grid-column: 1 / 4;
+        grid-row: 1 / 2;
+    }
+    .orderSummary{
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        font-size: 27px
+    }
+    .order_list{
+        font-size: 20px;
+    }
+    .your_cart{
+        font-size: 20px;
+    }
+}
+
+
 @media (max-width: 360px){
     .orderPreview{
         grid-column: 1 / 4;
