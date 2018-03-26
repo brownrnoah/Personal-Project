@@ -14,7 +14,8 @@
     grid-gap: 5%;
     justify-content: center;
     padding-top: 5%;
-    background: linear-gradient( black,#536b74,#536b74,black);
+    /* background: linear-gradient( black,#536b74,#536b74,black); */
+    background:  linear-gradient(rgb(39,39,39), #161616,rgb(39,39,39));
     height: 120vh;
     width: 80%;
     margin-top: 10vw;

@@ -14,7 +14,7 @@ class CartItem extends Component{
                     <button type='' className="" onClick={() => this.props.removeFromCart({index:this.props.index,price:this.props.price})}>Remove Item</button>
                     </div> 
                 </div> 
-                <div className = "item_price">{this.props.price}</div>  
+                <div className = "item_price">$ {this.props.price}</div>  
             </div>
         )
     }

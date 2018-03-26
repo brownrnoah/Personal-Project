@@ -10,6 +10,7 @@ const initialState = {
 const GET_USER = "GET_USER";
 const ADDTOCART = "ADDTOCART";
 const REMOVEFROMCART = "REMOVEFROMCART";
+const EMPTYCART = "EMPTYCART";
 
 export function getUser() {
     let userData = axios.get("/auth/me").then(res => {
@@ -50,6 +51,12 @@ export function removeFromCart(product) {
     }
 }
 
+export function emptyCart(){
+    return{
+        type: EMPTYCART,
+    }
+}
+
 
 export default function reducer(state = initialState, action) {
     console.log(action.type)
@@ -70,6 +77,8 @@ export default function reducer(state = initialState, action) {
             newItem.splice(action.payload.index,1)
             newTotal = (+newTotal - +action.payload.price).toFixed(2);
             return Object.assign({}, state, {currentCart:newItem, cartTotal:newTotal})
+        case EMPTYCART:
+            return Object.assign({}, state, {currentCart:[], cartTotal:0})
         default:
             return state;
     }

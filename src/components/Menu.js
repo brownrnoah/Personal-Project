@@ -223,11 +223,11 @@ class Menu extends Component {
             <div>
                 <Header />
                 <div>
-                    <div className="first_food_header"><h1>&darr; &emsp; SOUPS &emsp; &darr;</h1></div> 
+                    <div className="first_food_header"><h1> SOUPS </h1></div> 
                     <div className="wrapper soups">
                         {soups}
                     </div>
-                    <div className="food_header"><h1>&darr; &emsp; APPETIZERS &emsp; &darr;</h1></div> 
+                    <div className="food_header"><h1> APPETIZERS </h1></div> 
                     <div className="wrapper appetizers">
                         {appetizers}
                     </div>

@@ -20,6 +20,8 @@ class HomeSlider extends React.Component {
           <div><img src="https://images.unsplash.com/photo-1510001618818-4b4e3d86bf0f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ac3cfd6009a469e331bc67e0dba35c3a&auto=format&fit=crop&w=750&q=80" height="400" width="800"/></div>
           <div><img src="https://images.unsplash.com/photo-1463319611694-4bf9eb5a6e72?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e943caf37db69ac7babc7465013aee9&auto=format&fit=crop&w=750&q=80" height="400" width="800"/></div>
           <div><img src="https://images.unsplash.com/photo-1518879776099-fec4ea3edc5b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=711417f8aba4969d390a66599c0e77c5&auto=format&fit=crop&w=890&q=80" height="400" width="800"/></div>
+          <div><img src="https://images.unsplash.com/photo-1453872898249-3e8bf97c227f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a4e9fe79a12b16d33eec289ea2c3bc15&auto=format&fit=crop&w=923&q=80" height="400" width="800"/></div>
+          <div><img src="https://images.unsplash.com/photo-1507993725438-17a3957f28f6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3f0689cfde3a6b8e14a87dd3beb333b5&auto=format&fit=crop&w=792&q=80" height="400" width="800"/></div>
         </Slider>
       );
     }

@@ -5,24 +5,50 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"
 import CartItem from "./CartItem";
 import StripeCheckout from 'react-stripe-checkout';
+import axios from "axios";
+import { emptyCart } from "../ducks/users";
+import swal from 'sweetalert2';
 
 class ShoppingCart extends Component {
     constructor(props) {
         super(props);
-
+        this.state ={
+            subtotal: 0,
+            tax: .0675,
+            total: 0,
+            noDecimal: 0
+        }
     }
-    // onToken = (token) => {
-    //     token.card = void 0;
-    //     console.log('token', token);
-    //     axios.post("/api/payment"), { token, amount: 100 } ).then(response => {
-    //       alert('we are in business')
-    //     });
+
+    componentDidMount(){
+        var estimatedTax = (this.props.cartTotal * this.state.tax).toFixed(2)
+        this.setState({
+            subtotal:(+this.props.cartTotal).toFixed(2),
+            estimatedTax: estimatedTax,
+            total:(+estimatedTax + +this.props.cartTotal).toFixed(2),
+            noDecimal:(+estimatedTax + +this.props.cartTotal)*100
+        })
+    }
+
+    onToken = (token) => {
+        token.card = void 0;
+        console.log('token', token);
+        axios.post("/api/payment", { token, amount: this.state.noDecimal } ).then(response => {
+          this.props.emptyCart();
+          swal({
+            title:"Success!",
+            text: "Your order has been placed, your food should be ready within 20 minutes!",
+            showConfirmButton: true
+        });
+        });
+    }
 
     render() {
-        var subtotal = (+this.props.cartTotal).toFixed(2);
+        var subtotal = this.state.subtotal;
         var tax = .0675;
-        var estimatedTax = (this.props.cartTotal * tax).toFixed(2);
-        var total = (+estimatedTax + +this.props.cartTotal).toFixed(2);
+        var estimatedTax = this.state.estimatedTax;
+        var total = this.state.total;
+        var noDecimal = this.state.noDecimal;
 
         var cartItem = this.props.currentCart.map((e, index) => {
             return <CartItem key={index}
@@ -62,8 +88,8 @@ class ShoppingCart extends Component {
                             <StripeCheckout
                                 token={this.onToken}
                                 stripeKey="pk_test_y7qfmukzRqOnsfggoDxcHaAN"
-                                amount={total}
-                                data-label="CHECKOUT"
+                                amount={noDecimal}
+                                // data-label="CHECKOUT"
                             />
                         </div>
                     </div>
@@ -81,4 +107,4 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {})(ShoppingCart)
+export default connect(mapStateToProps, {emptyCart})(ShoppingCart)
